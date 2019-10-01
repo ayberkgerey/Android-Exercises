@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">exercise</string>
+    <string name="name">Your Name : </string>
+    <string name="hintname">Name</string>
+    <string name="lastname">Your Surname : </string>
+    <string name="hintlastname">Surname</string>
+
+</resources>
