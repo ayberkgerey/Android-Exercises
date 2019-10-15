@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/pic1"
+            android:scaleType="centerCrop"
+        />
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="29dp"
+           android:textColor="@android:color/white"
+           android:textColorHighlight="@android:color/holo_blue_bright"
+           android:textSize="30dp"
+           android:textStyle="bold"
+           android:text="Click That Babe!"/>
+
+
+<TextView
+        android:id="@+id/counterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="Click Count"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="35dp"
+    />
+
+        <Button
+            android:id="@+id/btnClick"
+            android:onClick="btnClick_Click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:text="CLICK"
+            android:textColor="@android:color/holo_blue_dark"
+            android:background="@android:color/white"
+            android:textSize="20dp"
+                />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:onClick="btnReset_Click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RESET"
+            android:textColor="@android:color/holo_blue_dark"
+            android:background="@android:color/white"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"/>
+
+</RelativeLayout>
