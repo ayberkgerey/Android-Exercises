@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cinsiyet : "
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark"/>
+
+    <RadioGroup
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdoMr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Bay"/>
+        <RadioButton
+            android:id="@+id/rdoMrs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Bayan"/>
+
+    </RadioGroup>
+
+    <CheckBox
+    android:id="@+id/chckBox"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="40dp"
+    android:layout_width="wrap_content"
+    android:text="Kullanım Koşullarını Kabul Ediyorum"
+    android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:text="Kayıt Ol"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"/>
+
+
+</LinearLayout>
