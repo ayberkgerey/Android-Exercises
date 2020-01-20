@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -20,35 +20,35 @@
             android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User Register"/>
+            android:text="User Login"/>
 
-<EditText
-    android:layout_margin="15dp"
-    android:inputType="textEmailAddress"
-    android:id="@+id/editTextEmail"
-    android:hint="@string/e_mail"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
-<EditText
-    android:layout_margin="15dp"
-    android:inputType="textPassword"
-    android:id="@+id/editTextPassword"
-    android:hint="@string/password"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_margin="15dp"
+            android:inputType="textEmailAddress"
+            android:id="@+id/editTextEmail"
+            android:hint="@string/e_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_margin="15dp"
+            android:inputType="textPassword"
+            android:id="@+id/editTextPassword"
+            android:hint="@string/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <Button
             android:layout_margin="15dp"
-            android:id="@+id/buttonRegister"
+            android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Regıster User"/>
+            android:text="SIGN UP"/>
 
         <TextView
             android:textSize="20sp"
             android:textAlignment="center"
-            android:text="I have an account"
-            android:id="@+id/textViewSignin"
+            android:text="I don't have an account"
+            android:id="@+id/textViewSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

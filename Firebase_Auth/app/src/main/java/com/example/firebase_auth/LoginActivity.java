@@ -18,62 +18,63 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
-    private Button registerBtn;
-    private EditText emailET , passwordET;
-    private TextView textViewSignin;
-
-    private ProgressDialog progressDialog;
+    private EditText emailEditText , passwordEditText;
+    private Button loginBtn;
+    private TextView registerTextView;
 
     private FirebaseAuth firebaseAuth;
+    private ProgressDialog progressDialog;
 
     private void init(){
-        registerBtn = (Button) findViewById(R.id.buttonRegister);
-        emailET = (EditText) findViewById(R.id.editTextEmail);
-        passwordET = (EditText) findViewById(R.id.editTextPassword);
-        textViewSignin = (TextView) findViewById(R.id.textViewSignin);
 
-        progressDialog = new ProgressDialog(this);
+        emailEditText = (EditText) findViewById(R.id.editTextEmail);
+        passwordEditText = (EditText)findViewById(R.id.editTextPassword);
+        loginBtn = (Button) findViewById(R.id.buttonLogin);
+        registerTextView = (TextView) findViewById(R.id.textViewSignup);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        if (firebaseAuth.getCurrentUser() != null){
-            finish();
-            startActivity(new Intent(this,ProfileActivity.class));
-        }
+        progressDialog = new ProgressDialog(this);
 
-        registerBtn.setOnClickListener(this);
-        textViewSignin.setOnClickListener(this);
+        loginBtn.setOnClickListener(this);
+        registerTextView.setOnClickListener(this);
+
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         init();
+
+        if(firebaseAuth.getCurrentUser() != null){
+            //profile activity here
+            startActivity(new Intent(getApplicationContext() , ProfileActivity.class));
+            finish();
+        }
 
     }
 
-
     @Override
     public void onClick(View v) {
-        if(v == registerBtn){
-            registerUser();
+        if(v == loginBtn){
+            loginUser();
         }
-        if(v == textViewSignin){
-           //will open login place
-            startActivity(new Intent(this, LoginActivity.class));
+        if(v == registerTextView){
+            startActivity(new Intent(this,MainActivity.class));
             finish();
         }
 
     }
 
 
-    private void registerUser() {
-        String email = emailET.getText().toString().trim();
-        String password = passwordET.getText().toString().trim();
+    private void loginUser() {
+
+        String email = emailEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Please enter email",Toast.LENGTH_SHORT).show();
@@ -86,23 +87,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
         //if validations are ok, we will first show a progressbar
-        progressDialog.setMessage("Registering");
+        progressDialog.setMessage("Please wait");
         progressDialog.show();
 
-        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                progressDialog.dismiss();
 
                 if(task.isSuccessful()){
+                    //start the profile Activity
+                    startActivity(new Intent(getApplicationContext() , ProfileActivity.class));
                     finish();
-                    startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                }else{
-                    Toast.makeText(MainActivity.this,"Could not registered, please try again",Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
-
     }
 
 }
