@@ -22,6 +22,27 @@
             android:text="TEXT"
             android:textAlignment="center"/>
 
+        <EditText
+            android:id="@+id/editTextName"
+            android:hint="Enter your full name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:hint="Enter address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:id="@+id/buttonSave"
+            android:text="Save Information"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
