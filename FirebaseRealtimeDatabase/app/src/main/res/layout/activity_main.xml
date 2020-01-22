@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:padding="15dp"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:hint="@string/enter_name"
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:entries="@array/genres"
+            android:id="@+id/spinnerGenres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_marginTop="15dp"
+            android:id="@+id/buttonAddArtist"
+            android:layout_marginEnd="120dp"
+            android:layout_marginStart="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_artist"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
