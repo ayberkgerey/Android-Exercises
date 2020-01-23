@@ -18,9 +18,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ListViewAdapter();
+
+    }
+
+    public void ListViewAdapter(){
+
         ListView myListView = (ListView) findViewById(R.id.listviewOne);
 
-    //Person objects
+        //Person objects
         Person mert = new Person("Mert","12-20-1997","Male");
         Person muco = new Person("Mucahit","06-13-1997","Male");
         Person john = new Person("Mert","12-20-1978","Male");
@@ -36,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         Person jason = new Person("Jason","08-16-1991","Male");
 
         //add them in ArrayList
-     ArrayList<Person> peopleList = new ArrayList<>();
+        ArrayList<Person> peopleList = new ArrayList<>();
 
         peopleList.add(mert);
         peopleList.add(muco);
@@ -54,5 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         PersonListAdapter adapter = new PersonListAdapter(this, R.layout.adapter_view_layout, peopleList);
         myListView.setAdapter(adapter);
+
     }
+
 }
