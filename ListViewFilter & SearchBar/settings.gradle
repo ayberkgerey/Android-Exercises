@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='ListView Filter and SearchBar'
