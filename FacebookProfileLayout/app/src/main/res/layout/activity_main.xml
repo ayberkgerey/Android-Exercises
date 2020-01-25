@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/bannerimg"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bannerimg"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"/>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp">
+            <ImageView
+                android:background="@drawable/border"
+                android:id="@+id/profilepic"
+                android:scaleType="centerCrop"
+                android:src="@drawable/proimg"
+                android:layout_width="140dp"
+                android:layout_height="140dp"/>
+        <TextView
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:text="Ayberk Gerey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textAlignment="center"
+            android:textSize="19dp"
+            android:text="I am busy now "
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/secondLayout"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_below="@+id/topLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_margin="2dp"
+            android:text="TImelIne"
+            android:background="@drawable/border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_margin="2dp"
+            android:background="@drawable/border"
+            android:text="about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_margin="2dp"
+            android:background="@drawable/border"
+            android:text="friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_margin="2dp"
+            android:background="@drawable/border"
+            android:text="photos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:background="@drawable/border"
+        android:layout_below="@id/secondLayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearlayout3">
+
+        <ImageView
+            android:layout_marginTop="25dp"
+            android:src="@drawable/proimg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+        <EditText
+            android:textAlignment="textStart"
+            android:background="@drawable/border"
+            android:id="@+id/postBar"
+            android:textColor="@color/black"
+            android:hint="What's on your mind?"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+    </LinearLayout>
+
+        <Button
+            android:layout_below="@id/linearlayout3"
+            android:layout_alignParentRight="true"
+            android:text="POST"
+            android:layout_width="80dp"
+            android:layout_height="38dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+    </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
