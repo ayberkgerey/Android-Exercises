@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textSize="50dp"
+        android:text="Shared Preferences"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <EditText
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:id="@+id/editTextName"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:hint="Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:ems="10"
+            android:inputType="textPassword"
+            android:id="@+id/editTextPassword"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:layout_gravity="center"/>
+
+        <CheckBox
+            android:id="@+id/remembercheckbox"
+            android:layout_gravity="center"
+            android:text="Remember Me "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

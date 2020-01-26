@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SharedPreferences</string>
+    <string name="checkbox">com.example.sharedpreferencess.checkbox</string>
+    <string name="name">com.example.sharedpreferences.name</string>
+    <string name="password">com.example.sharedpreferences.password</string>
+    <string name="login">LOGIN</string>
+</resources>
