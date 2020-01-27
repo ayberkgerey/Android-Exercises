@@ -2,6 +2,7 @@ package com.example.sharedpreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
                     String password = mPassword.getText().toString();
                     mEditor.putString(getString(R.string.password),password);
                     mEditor.commit();
+
+                    Intent intent = new Intent(MainActivity.this,Second.class);
+                    startActivity(intent);
 
                 }else{
                     //set a checkbox when the application starts
