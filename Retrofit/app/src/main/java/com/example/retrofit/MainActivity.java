@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         textViewResult = findViewById(R.id.text_view_result);
         RetrofitInitialize();
 
-        getComments();
+        getPosts();
+        //getComments();
 
     }
 
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void getPosts() {
-        Call<List<Post>> call = jsonPlaceHolderApi.getPosts();
+        Call<List<Post>> call = jsonPlaceHolderApi.getPosts(4);
 
 
         call.enqueue(new Callback<List<Post>>() {
