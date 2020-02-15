@@ -29,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
         textViewResult = findViewById(R.id.text_view_result);
         RetrofitInit();
 
-        getPosts();
-        getComments();
+        //getPosts();
+        //getComments();
+        createPost();
     }
 
 
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 List<Post> posts = response.body();
                 for(Post post : posts){
-                    String content = " ";
+                    String content = "";
                     content += "ID : " + post.getId() + "\n";
                     content += "UserId : " + post.getUserId() + "\n";
                     content += "Title : " + post.getTitle() + "\n";
@@ -111,7 +112,35 @@ public class MainActivity extends AppCompatActivity {
                 textViewResult.setText(t.getMessage());
             }
         });
+    }
 
+    private void createPost() {
+        Post post = new Post(23,"new Title","New Text");
+        Call<Post> call = jsonPlaceHolderApi.createPost(post);
+
+        call.enqueue(new Callback<Post>() {
+            @Override
+            public void onResponse(Call<Post> call, Response<Post> response) {
+                if(!response.isSuccessful()){
+                    textViewResult.setText("Code : " + response.code());
+                    return;
+                }
+                Post postResponse = response.body();
+
+                String content = "";
+                content += "Code : " + response.code()+ "\n";
+                content += "ID : " + postResponse.getId() + "\n";
+                content += "UserId : " + postResponse.getUserId() + "\n";
+                content += "Title : " + postResponse.getTitle() + "\n";
+                content += "Text : " + postResponse.getText() + "\n\n";
+                textViewResult.setText(content);
+            }
+
+            @Override
+            public void onFailure(Call<Post> call, Throwable t) {
+                textViewResult.setText(t.getMessage());
+            }
+        });
     }
 
 
