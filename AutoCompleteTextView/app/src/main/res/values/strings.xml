@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AutoCompleteTextView</string>
+    <string name="select_a_country">Select a Country</string>
+</resources>
