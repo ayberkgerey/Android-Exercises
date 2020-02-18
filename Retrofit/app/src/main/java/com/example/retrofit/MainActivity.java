@@ -38,16 +38,12 @@ public class MainActivity extends AppCompatActivity {
         //getPosts();
         //getComments();
         //createPost();
-        updatePost();
+        //updatePost();
         //deletePost();
     }
 
 
     private void RetrofitInit(Gson gson){
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://jsonplaceholder.typicode.com/")
@@ -164,7 +160,12 @@ public class MainActivity extends AppCompatActivity {
     private void updatePost() {
         Post post = new Post(12,null,"New Text");
 
-        Call<Post> call = jsonPlaceHolderApi.putPost(5,post);
+        Map<String , String> headers = new HashMap<>();
+        headers.put("Map-Header1","def");
+        headers.put("Map-Header2","ghi");
+
+
+        Call<Post> call = jsonPlaceHolderApi.patchPost(headers,5,post);
 
         call.enqueue(new Callback<Post>() {
             @Override
