@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,12 +38,17 @@ public class MainActivity extends AppCompatActivity {
         //getPosts();
         //getComments();
         //createPost();
-        //updatePost();
-        deletePost();
+        updatePost();
+        //deletePost();
     }
 
 
     private void RetrofitInit(Gson gson){
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
